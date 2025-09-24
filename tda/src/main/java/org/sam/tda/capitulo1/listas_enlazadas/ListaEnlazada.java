@@ -58,4 +58,20 @@ public class ListaEnlazada<T> {
         nodoFinal.setNext(null);
         return nodoActual.getDato();
     }
+
+    public void imprimir_lista_iteracion(){
+        Nodo<T> nodoActual = this.getHead();
+        while (nodoActual.getNext() != null) {
+            System.out.println("Dato: " + nodoActual.getDato() + ", Next: {" + nodoActual.getNext() + "}");
+            nodoActual = nodoActual.getNext();
+        }
+        System.out.println("Dato: " + nodoActual.getDato() + ", Next: {" + nodoActual.getNext() + "}");
+    }
+
+    public void imprimir_lista_recursion(Nodo<T> nodo){
+        System.out.println("Dato: " + nodo.getDato() + ", Next: {" + nodo.getNext() + "}");
+        if(nodo.getNext() != null){
+            imprimir_lista_recursion(nodo.getNext());
+        }
+    }
 }
