@@ -36,18 +36,26 @@ public class ListaEnlazada<T> {
             this.setHead(nodo);
         } else {
             Nodo<T> nodoActual = this.getHead();
-
             while (nodoActual.getNext() != null) {
                 nodoActual = nodoActual.getNext();
             }
-
             nodoActual.setNext(nodo);
         }
     }
 
     public T suprimir_cabeza(){
-        Nodo<T> aux = this.getHead();
-        this.setHead(aux.getNext());
-        return aux.getDato();
+        this.setHead(this.getHead().getNext());
+        return this.getHead().getDato();
+    }
+
+    public T suprimir_final(){
+        Nodo<T> nodoActual = this.getHead();
+        Nodo<T> nodoFinal = nodoActual;
+        while(nodoActual.getNext() != null) {
+            nodoFinal = nodoActual;
+            nodoActual = nodoActual.getNext();
+        }
+        nodoFinal.setNext(null);
+        return nodoActual.getDato();
     }
 }
