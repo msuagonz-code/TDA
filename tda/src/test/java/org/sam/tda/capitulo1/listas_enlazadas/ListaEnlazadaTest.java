@@ -57,4 +57,21 @@ class ListaEnlazadaTest {
         Nodo<Persona> listaNodo = lista.getHead().getNext().getNext().getNext();
         assertEquals(listaNodo, this.n4);
     }
+
+    @Test
+    void suprimir_cabeza() {
+        // Creamos la lista
+        ListaEnlazada<Persona> lista = new ListaEnlazada<Persona>(this.n3);
+        lista.insertar_cabeza(this.n2);
+        lista.insertar_cabeza(this.n1); // -> n1 es la cabeza
+        lista.insertar_final(this.n4);  // -> n4 es la cola
+
+        // Llamamos a la función suprimir cabeza
+        lista.suprimir_cabeza();
+
+        // Comprobamos que la cabeza no es n1
+        assertNotEquals(lista.getHead(), this.n1);
+        // Comprobamos que la cabeza es n2
+        assertEquals(lista.getHead(), this.n2);
+    }
 }
