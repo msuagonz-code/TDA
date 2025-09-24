@@ -30,4 +30,19 @@ public class ListaEnlazada<T> {
         this.setHead(nodo);
     }
 
+    public void insertar_final(Nodo<T> nodo){
+        // Primero debemos comprobar que la lista no este vacía
+        if(getHead() == null){
+            this.setHead(nodo);
+        } else {
+            Nodo<T> nodoActual = this.getHead();
+
+            while (nodoActual.getNext() != null) {
+                nodoActual = nodoActual.getNext();
+            }
+
+            nodoActual.setNext(nodo);
+        }
+    }
+
 }
