@@ -1,22 +1,43 @@
 package org.sam.tda.capitulo1.listas_enlazadas;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ListaEnlazadaTest {
 
+    // Objetos Personas que usaremos como Datos para la lista
+    Persona p1;
+    Persona p2;
+    Persona p3;
+    Persona p4;
+
+    // Objetos Nodo que insertaremos directamente en la lista
+    Nodo<Persona> n1;
+    Nodo<Persona> n2;
+    Nodo<Persona> n3;
+    Nodo<Persona> n4;
+
+    @BeforeEach
+    void initAll() {
+        // Inicializamos los Objetos Persona
+        this.p1 = new Persona("Y3661988B", "Manuel", "Suárez", "manuelal180@hotmail.com");
+        this.p2 = new Persona("Y2878800L", "Jose", "Bernardo", "josebernardo20@hotmail.com");
+        this.p3 = new Persona("X7672740D", "Antonio", "Padilla", "padilla5687@gmail.com");
+        this.p4 = new Persona("16397895E", "Miguel", "Gonzalez", "m_gonzalez879@yahoo.com");
+
+        // Inicializamos los Nodos
+        this.n1 = new Nodo<Persona>(this.p1);
+        this.n2 = new Nodo<Persona>(this.p2);
+        this.n3 = new Nodo<Persona>(this.p3);
+        this.n4 = new Nodo<Persona>(this.p4);
+    }
+
     @Test
     void insertar_cabeza() {
-
-        Persona p1 = new Persona("Y3661988B", "Manuel", "Suárez", "manuelal180@hotmail.com");
-        Persona p2 = new Persona("Y2878800L", "Jose", "Bernardo", "josebernardo20@hotmail.com");
-
-        Nodo<Persona> n1 = new Nodo<Persona>(p1);
-        Nodo<Persona> n2 = new Nodo<Persona>(p2);
-
-        ListaEnlazada<Persona> lista = new ListaEnlazada<Persona>(n1);
-        lista.insertar_cabeza(n2);
+        ListaEnlazada<Persona> lista = new ListaEnlazada<Persona>(this.n1);
+        lista.insertar_cabeza(this.n2);
 
         assertEquals(lista.getHead(), n2); // Se ha insertado n2 en la cabeza correctamente
         assertEquals(lista.getHead().getNext(), n1); // se ha desplazado n1 correctamente
