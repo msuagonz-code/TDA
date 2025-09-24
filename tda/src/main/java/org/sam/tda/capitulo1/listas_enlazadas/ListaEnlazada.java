@@ -1,5 +1,7 @@
 package org.sam.tda.capitulo1.listas_enlazadas;
 
+import java.util.Objects;
+
 public class ListaEnlazada<T> {
 
     private Nodo<T> head;
@@ -19,4 +21,13 @@ public class ListaEnlazada<T> {
     public void setHead(Nodo<T> head) {
         this.head = head;
     }
+
+    public void insertar_cabeza(Nodo<T> nodo){
+        Objects.requireNonNull(nodo, "Nodo no puede ser null");
+        if(this.getHead() != null){
+            nodo.setNext(this.getHead());
+        }
+        this.setHead(nodo);
+    }
+
 }
