@@ -95,4 +95,24 @@ class ListaEnlazadaTest {
         // Comprobamos que el objeto devuelto por la función sea n4
         assertEquals(persona, this.n4.getDato());
     }
+
+    @Test
+    void imprimir_lista() {
+        // Creamos la lista
+        ListaEnlazada<Persona> lista = new ListaEnlazada<Persona>(this.n3);
+        lista.insertar_cabeza(this.n2);
+        lista.insertar_cabeza(this.n1);
+
+        // usamos el metodo insertar_final
+        lista.insertar_final(this.n4);
+
+        System.out.println(" ############ Recursión Ascendente ############ ");
+        lista.imprimir_lista_recursion_asc(lista.getHead());
+
+        System.out.println(" ############ Recursión Descendente ############ ");
+        lista.imprimir_lista_recursion_desc(lista.getHead());
+
+        System.out.println(" ############ Iteración ############");
+        lista.imprimir_lista_iteracion();
+    }
 }

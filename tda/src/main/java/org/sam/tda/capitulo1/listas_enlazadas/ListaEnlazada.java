@@ -68,10 +68,19 @@ public class ListaEnlazada<T> {
         System.out.println("Dato: " + nodoActual.getDato() + ", Next: {" + nodoActual.getNext() + "}");
     }
 
-    public void imprimir_lista_recursion(Nodo<T> nodo){
+    public void imprimir_lista_recursion_asc(Nodo<T> nodo){
+        if(nodo == null) return;
         System.out.println("Dato: " + nodo.getDato() + ", Next: {" + nodo.getNext() + "}");
-        if(nodo.getNext() != null){
-            imprimir_lista_recursion(nodo.getNext());
-        }
+        imprimir_lista_recursion_asc(nodo.getNext());
+    }
+
+    /*
+    * Se “desciende” hasta el final y comienza a imprimir cuando regresa del stack
+    * produciendo el orden inverso (último elemento primero)
+    * */
+    public void imprimir_lista_recursion_desc(Nodo<T> nodo){
+        if(nodo == null) return;
+        imprimir_lista_recursion_desc(nodo.getNext());
+        System.out.println("Dato: " + nodo.getDato() + ", Next: {" + nodo.getNext() + "}");
     }
 }
