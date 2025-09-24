@@ -74,4 +74,25 @@ class ListaEnlazadaTest {
         // Comprobamos que la cabeza es n2
         assertEquals(lista.getHead(), this.n2);
     }
+
+    @Test
+    void suprimir_final() {
+        // Creamos la lista
+        ListaEnlazada<Persona> lista = new ListaEnlazada<Persona>(this.n3);
+        lista.insertar_cabeza(this.n2);
+        lista.insertar_cabeza(this.n1); // -> n1 es la cabeza
+        lista.insertar_final(this.n4);  // -> n4 es la cola
+
+        // Llamamos a la función suprimir cabeza
+        Persona persona = lista.suprimir_final();
+
+        Nodo<Persona> ultimo = lista.getHead().getNext().getNext();
+        // Al suprimir n4 que es la cola, el ultimo objeto es n3
+        // Comprobamos que sea n3
+        assertEquals(ultimo, this.n3);
+        // Comprobamos que n3 apunte a null
+        assertNull(ultimo.getNext());
+        // Comprobamos que el objeto devuelto por la función sea n4
+        assertEquals(persona, this.n4.getDato());
+    }
 }
