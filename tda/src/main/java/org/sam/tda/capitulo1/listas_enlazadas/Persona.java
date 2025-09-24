@@ -2,6 +2,8 @@ package org.sam.tda.capitulo1.listas_enlazadas;
 
 public class Persona {
 
+    public Integer id;
+
     public String dni;
 
     public String nombre;
@@ -13,7 +15,8 @@ public class Persona {
     public Persona() {
     }
 
-    public Persona(String dni, String nombre, String apellido, String correo) {
+    public Persona(Integer id, String dni, String nombre, String apellido, String correo) {
+        this.id = id;
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -52,10 +55,19 @@ public class Persona {
         this.correo = correo;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "{" +
-                "dni='" + dni + '\'' +
+                "id='" + id + '\'' +
+                ", dni='" + dni + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
                 ", correo='" + correo + '\'' +

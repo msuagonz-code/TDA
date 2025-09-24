@@ -22,10 +22,10 @@ class ListaEnlazadaTest {
     @BeforeEach
     void initAll() {
         // Inicializamos los Objetos Persona
-        this.p1 = new Persona("Y3661988B", "Manuel", "Suárez", "manuelal180@hotmail.com");
-        this.p2 = new Persona("Y2878800L", "Jose", "Bernardo", "josebernardo20@hotmail.com");
-        this.p3 = new Persona("X7672740D", "Antonio", "Padilla", "padilla5687@gmail.com");
-        this.p4 = new Persona("16397895E", "Miguel", "Gonzalez", "m_gonzalez879@yahoo.com");
+        this.p1 = new Persona(1, "Y3661988B", "Manuel", "Suárez", "manuelal180@hotmail.com");
+        this.p2 = new Persona(2, "Y2878800L", "Jose", "Bernardo", "josebernardo20@hotmail.com");
+        this.p3 = new Persona(3, "X7672740D", "Antonio", "Padilla", "padilla5687@gmail.com");
+        this.p4 = new Persona(4, "16397895E", "Miguel", "Gonzalez", "m_gonzalez879@yahoo.com");
 
         // Inicializamos los Nodos
         this.n1 = new Nodo<Persona>(this.p1);
