@@ -45,4 +45,9 @@ public class ListaEnlazada<T> {
         }
     }
 
+    public T suprimir_cabeza(){
+        Nodo<T> aux = this.getHead();
+        this.setHead(aux.getNext());
+        return aux.getDato();
+    }
 }
