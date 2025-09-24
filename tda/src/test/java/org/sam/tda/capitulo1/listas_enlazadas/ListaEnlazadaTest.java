@@ -42,4 +42,19 @@ class ListaEnlazadaTest {
         assertEquals(lista.getHead(), n2); // Se ha insertado n2 en la cabeza correctamente
         assertEquals(lista.getHead().getNext(), n1); // se ha desplazado n1 correctamente
     }
+
+    @Test
+    void insertar_final() {
+        // Creamos la lista
+        ListaEnlazada<Persona> lista = new ListaEnlazada<Persona>(this.n3);
+        lista.insertar_cabeza(this.n2);
+        lista.insertar_cabeza(this.n1);
+
+        // usamos el metodo insertar_final
+        lista.insertar_final(this.n4);
+
+        // Comprobamos que el nodo n4 realmente está en la última posición
+        Nodo<Persona> listaNodo = lista.getHead().getNext().getNext().getNext();
+        assertEquals(listaNodo, this.n4);
+    }
 }
