@@ -11,11 +11,11 @@ Tras completar con éxito dos cursos introductorios sobre estructuras de datos, 
 Mi objetivo es profundizar en los conceptos fundamentales y en la aplicación práctica de estas estructuras, dedicando un tiempo de estudio sostenido y sistemático para convertir mis conocimientos teóricos en habilidades sólidas y aplicables a problemas reales.
 
 ## Bibliografía
-- **Título:** *Estructura de Datos y Algoritmos*  
-- **Autores:** Roberto Hernández, Juan Carlos Lázaro, Raquel Dormido, Salvador Ros  
+- **Título:** *Introduction to Java Programming and Data Structures, Comprehensive Version, Global Edition*  
+- **Autor:** Dr. Y. Daniel Liang  
 - **Edición:** N.º 1  
-- **ISBN‑13:** 978‑8420529806  
-- **ISBN‑10:** 842052980X  
+- **ISBN‑13:** 978-1292402079  
+- **ISBN‑10:** 1292402075  
 
 ## Convenciones de nombres
 En este proyecto seguiré las siguientes convenciones para hacer el trabajo más organizado y sencillo de consultar en el futuro.
